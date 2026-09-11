@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borregos Awards 2026 — Tommaso</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #172640 0%, #080c14 45%, #020305 100%);
+      color: white;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#d7ae58 1px, transparent 1px);
+      background-size: 45px 45px, 70px 70px;
+      background-position: 0 0, 25px 20px;
+    }
+
+    .intro {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 22px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .sheep {
+      font-size: 55px;
+      filter: drop-shadow(0 0 18px rgba(212, 169, 79, .35));
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 18px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .small {
+      letter-spacing: 7px;
+      font-size: 12px;
+      color: #bbb;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 11vw, 64px);
+      letter-spacing: 2px;
+      line-height: 0.95;
+      background: linear-gradient(
+        180deg,
+        #fff1b8 0%,
+        #dcae50 45%,
+        #8d5b16 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 12px 35px rgba(0,0,0,.5);
+    }
+
+    .year {
+      font-size: 28px;
+      letter-spacing: 12px;
+      color: #d8ad56;
+      margin: 12px 0 38px;
+    }
+
+    .line {
+      width: 130px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d1a754,
+        transparent
+      );
+      margin: 24px auto;
+    }
+
+    .detected {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #9fa5af;
+      margin-bottom: 12px;
+    }
+
+    .name {
+      font-size: 34px;
+      letter-spacing: 5px;
+      margin-bottom: 6px;
+    }
+
+    .message {
+      max-width: 330px;
+      font-family: Arial, sans-serif;
+      color: #c5c7cb;
+      line-height: 1.6;
+      font-size: 14px;
+      margin: 14px auto 30px;
+    }
+
+    button {
+      border: 1px solid #c99a3e;
+      background: linear-gradient(
+        135deg,
+        #dcb35d,
+        #8e5f1e
+      );
+      color: #090909;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 17px 28px;
+      border-radius: 50px;
+      font-size: 12px;
+      box-shadow:
+        0 0 30px rgba(211,164,70,.22),
+        inset 0 1px rgba(255,255,255,.5);
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    button:active {
+      transform: scale(.96);
+    }
+
+    .invite-screen {
+      display: none;
+      min-height: 100vh;
+      padding: 28px 16px 50px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      z-index: 3;
+      opacity: 0;
+    }
+
+    .invite-screen.show {
+      display: flex;
+      animation: appear 1s forwards;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(.96);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .top-text {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 11px;
+      color: #d6b367;
+      margin-bottom: 18px;
+    }
+
+    .invitation {
+      display: block;
+      width: min(100%, 520px);
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow:
+        0 25px 80px rgba(0,0,0,.75),
+        0 0 35px rgba(190,140,50,.16);
+      border: 1px solid rgba(218,178,96,.3);
+    }
+
+    .footer {
+      margin-top: 22px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .secret {
+      margin-top: 24px;
+      color: #b79451;
+      font-size: 12px;
+      letter-spacing: 2px;
+      animation: glow 2s infinite;
+    }
+
+    @keyframes glow {
+      50% { opacity: .45; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <section class="intro" id="intro">
+
+    <div class="sheep">🐏</div>
+
+    <div class="small">INVITACIÓN OFICIAL</div>
+
+    <h1>BORREGOS<br>AWARDS</h1>
+
+    <div class="year">2026</div>
+
+    <div class="line"></div>
+
+    <div class="detected">
+      Invitación personal detectada
+    </div>
+
+    <div class="name">TOMMASO</div>
+
+    <div class="message">
+      Tu acreditación ha sido reconocida.
+      El dress code asignado permanece clasificado
+      hasta que decidas revelarlo.
+    </div>
+
+    <button onclick="revealInvite()">
+      Revelar Dress Code
+    </button>
+
+    <div class="secret">
+      NFC ACCESS · BORREGOS
+    </div>
+
+  </section>
+
+
+  <section class="invite-screen" id="invite">
+
+    <div class="top-text">
+      Expediente desbloqueado
+    </div>
+
+    <img
+      class="invitation"
+      src="96B50128-E45F-4CC6-9A51-B79C62A77A7A.jpeg"
+      alt="Invitación de Tommaso"
+    >
+
+    <div class="footer">
+      Borregos Awards · 2026
+    </div>
+
+  </section>
+
+
+  <script>
+    function revealInvite() {
+
+      const intro = document.getElementById("intro");
+      const invite = document.getElementById("invite");
+
+      intro.style.opacity = "0";
+      intro.style.transform = "scale(1.05)";
+
+      if (navigator.vibrate) {
+        navigator.vibrate(80);
+      }
+
+      setTimeout(() => {
+        intro.style.display = "none";
+        invite.classList.add("show");
+      }, 700);
+    }
+  </script>
+
+</body>
+</html>
